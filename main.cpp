@@ -10,6 +10,7 @@ int main(void)
 	std::ifstream in(InputFile);
 	try
 	{
+		int n1,n2;
 		// Pi1, Pi2 matrici patratice  de tip int
 		//Di1, Di2 matrici dreptunghiulare de tip int 
 		int  *Pi1, *Pi2, *Di1, *Di2;
@@ -31,8 +32,8 @@ int main(void)
 			Pi1[i] = i;
 	
 		
-		
-		for (i = 0; i < N2*N2; ++i)
+		in>>n1>>n2;
+		for (i = 0; i < n2*n22; ++i)
 		   in>>	Pi2[i];
 		
 		for (i = 0; i < L1*L2; ++i)
@@ -59,7 +60,7 @@ int main(void)
 		for (i = 0; i < L2*L1; ++i)
 			Df2[i] = i/3.12334;
 
-		MyMatrix<int> S1(Pi1, N1, N1), S2(Pi2, N2, N2), S3(Di1, L1, L2), S4(Di2, L2, L1);
+		MyMatrix<int> S1(Pi1, N1, N1), S2(Pi2, n1, n2), S3(Di1, L1, L2), S4(Di2, L2, L1);
 		MyMatrix<float> F1(Pf1, N1, N1), F2(Pf2, N2, N2), F3(Df1, L1, L2), F4(Df2, L2, L1);
 		
 		S1.ShowMatrix();
